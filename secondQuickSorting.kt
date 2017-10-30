@@ -6,7 +6,8 @@ import java.util.*
  */
 class secondQuickSorting {
 
-    var numberList : IntArray? = null
+ 
+  var numberList : IntArray? = null
     var length : Int? = null
     var counterJ : Int = 0
 
@@ -25,13 +26,19 @@ class secondQuickSorting {
         var j : Int = highNum
         var pivot = numberList!!.get(lowNum)
 
-        while (i<=j){
-            while(numberList!!.get(j) > pivot){
-                j--
+        while (i<j){
+            while(numberList!!.get(i) > pivot){
+                i++
                 counterJ++
             }
-            if (i<=j){
-                exchangeNumb(i,j)
+            while(numberList!!.get(j) < pivot){
+                j--
+            }
+            
+            if (j>=i){
+               val temp : Int = numberList!!.get(i)
+       		 numberList!![i] = numberList!![j]
+      		  numberList!![j] = temp
                 i++
                 j--
             }
@@ -43,12 +50,6 @@ class secondQuickSorting {
 
     }
 
-    fun exchangeNumb(i:Int,j:Int){
-        val temp : Int = numberList!!.get(i)
-        numberList!![i] = numberList!![j]
-        numberList!![j] = temp
-
-    }
 
     fun main(args:Array<String>){
 
@@ -63,6 +64,5 @@ class secondQuickSorting {
         println("$counterJ times.")
 
     }
-
 
 }
