@@ -58,8 +58,9 @@ class randomQuickSorting {
     fun main(args:Array<String>){
 
         val rand = Random()
-        println("How many numbers will be create?")
+        println("100 numbers created")
         val numb : Int = rand.nextInt(100)
+        // İstersek burayı 10000 yaparak farklı sonuçlar elde edebiliriz
         var numberList = IntArray(numb+1, {i: Int -> rand.nextInt(100) })
         println ("Non-sorted List: " + numberList.asList() )
 
